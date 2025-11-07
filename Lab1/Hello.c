@@ -6,7 +6,7 @@ int main(){ 	/*Ham main*/
 //	scanf("%d %d", &a, &b); /* Lay du lieu tu ban phim */
 //	printf("%d",a+b);
 	printf("Ban ten la:");
-	char name[10];
-	scanf("%s", &name);
+	char name[10]; // Khai bao mang
+	scanf("%s", &name); // Lay ten 
 	printf("Toi ten la %s",name);
 }
