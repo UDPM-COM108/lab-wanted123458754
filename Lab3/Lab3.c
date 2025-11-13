@@ -91,6 +91,35 @@ void Gptrbachai(){
         
     }
 }
+void Ttiendien(){
+    int tien;
+    printf("Nhap vao số kWh su dung: ");
+    scanf("%d",&tien);
+        if (0 <= tien >= 50)
+        {
+            printf("Gia ban dien la: %d dong",tien*1678);
+        }
+        else if (51 <= tien <= 100)
+        {
+            printf("Gia ban dien la: %d dong",tien*1734);
+        }
+        else if (101 <= tien <= 200)
+        {
+            printf("Gia ban dien la: %d dong",tien*2014);
+        }
+        else if (201 <= tien <= 300)
+        {
+            printf("Gia ban dien la: %d dong",tien*2536);
+        }
+        else if (301 <= tien <= 400)
+        {
+            printf("Gia ban dien la: %d dong",tien*2834);
+        }
+        else if (401 <= tien)
+        {
+            printf("Gia ban dien la: %d dong",tien*2927);
+        }    
+}
 int main(){
     int nhap;
     printf("\tMenu\n");
@@ -98,6 +127,7 @@ int main(){
     printf("\n1. Tinh hoc luc.");
     printf("\n2. Giai phuong trinh bac nhat.");
     printf("\n3. Giai phuong trinh bac hai.");
+    printf("\n4. Tinh tien dien.");
     printf("\nChon chuc nang:");
     scanf("%d",&nhap);
     switch(nhap){
@@ -112,6 +142,9 @@ int main(){
         case 3:
         system("cls");
         Gptrbachai();
+        case 4:
+        system("cls");
+        Ttiendien();
         break;
         default:
         break;
