@@ -128,25 +128,30 @@ int main(){
     printf("\n2. Giai phuong trinh bac nhat.");
     printf("\n3. Giai phuong trinh bac hai.");
     printf("\n4. Tinh tien dien.");
+    printf("\n0. Thoat chuong trinh.");
     printf("\nChon chuc nang:");
     scanf("%d",&nhap);
     switch(nhap){
         case 1:
-        system("cls");
-        Thocluc();
+        system("cls"); 
+        Thocluc(); //Goi chuong trinh con
         break;
         case 2:
         system("cls");
-        Gptrbacnhat();
+        Gptrbacnhat();//Goi chuong trinh con
         break;
         case 3:
         system("cls");
-        Gptrbachai();
+        Gptrbachai();//Goi chuong trinh con
         case 4:
         system("cls");
-        Ttiendien();
+        Ttiendien();//Goi chuong trinh con
         break;
+        case 0:
+        printf("Thoat chuong trinh!");
+        exit(0); //Thoat chuong trinh
         default:
+        printf("Chuong trinh loi");
         break;
     }
 }
