@@ -133,8 +133,11 @@ int main(){
     scanf("%d",&nhap);
     switch(nhap){
         case 1:
-        system("cls"); 
-        Thocluc(); //Goi chuong trinh con
+        char lc;
+        do{
+            system("cls"); 
+            Thocluc(); //Goi chuong trinh con
+        } while(lc == 'y' || lc == 'Y');
         break;
         case 2:
         system("cls");
