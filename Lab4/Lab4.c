@@ -82,8 +82,8 @@ void Chuyendoisothapphan(){
             n = n / 2;
             index++;
         }
-        for (int j = index - 1; j >= 0; j--) {
-            printf("%c", binary[j]);
+        for (i = index - 1; i >= 0; i--) {
+            printf("%c", binary[i]);
         }
         printf("\n");
     }
