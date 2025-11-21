@@ -66,20 +66,29 @@ void Kiemtrasochinhphuong(){
     }
 }
 void Chuyendoisothapphan(){
-    int n;
-    printf("\n\nChuong Trinh chuyen doi so thap phan sang he nhi phan va he bat phan\n");
+    int n,i, index = 0;
+    char binary[9];
+    printf("\n\nChuong Trinh chuyen doi so thap phan sang he nhi phan.\n");
     printf("\nNhap vao 1 so thap phan n:");
     scanf("%d", &n);
-    if(n > 0){
-        while (n >= 0){
-            printf("%d", n % 2);
-            n /= 2;
+    printf("He nhi phan cua so thap phan %d la: ", n);
+    if(n == 0){
+        printf("0\n");
+        return;
+    }
+    else if(n > 0){
+        while (n > 0){  
+            binary[index] = (n % 2) + '0';
+            n = n / 2;
+            index++;
         }
-        
+        for (int j = index - 1; j >= 0; j--) {
+            printf("%c", binary[j]);
+        }
+        printf("\n");
     }
     else{
-        for(int i = n; i < 0; i++){
-            printf("%d", i % 2);}
+        printf("Chương trình chỉ hỗ trợ số thập phân không âm.");        
     }
 }
 int main() {
