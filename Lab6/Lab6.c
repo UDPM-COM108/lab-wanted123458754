@@ -81,7 +81,7 @@ void binhphuongmang(){
         printf("\n");
     }
 }
-int main(){
+int main(){//
     trungbinhtong();
     lonnhatvanhonhat();
     bubblesort();
