@@ -68,7 +68,6 @@ void KtrSoNguyen(){
 			}
 			printf("\n\n\nBan co muon thoat chuong trinh khong?(y/n):");
 			scanf("%s",&luaChon);
-			retu:
 			if(strlwr(strstr(luaChon,"y"))){
 				printf("\n");
 				break;
@@ -83,29 +82,29 @@ void KtrSoNguyen(){
 
 		}while(1);
 	}
-	// void UocSoChungVaBoiSoChung(){
-	// 	do{
-	// 		printf("Chuong trinh tim Uoc so chung lon nhat va Boi so chung nho nhat cua 2 so nguyen\n");
-	// 		int x,y;
-	// 		printf("\nNhap so nguyen x:");
-	// 		scanf("%d",&x);
-	// 		printf("Nhap so nguyen y:");
-	// 		scanf("%d",&y);
-	// 		if(y==0){
-	// 			printf("Uoc chung lon nhat la: %d",x);
-	// 		}
-	// 		else if (x == 0 && y == 0) {
-    //         printf("Khong the tim UCLN/BCNN cho ca hai so 0.\n");
-	// 		}
-	// 		else if (x%y==0)
-	// 		{
-	// 			printf("Uoc chung lon nhat la: %d",y);
-	// 		}
-	// 		else{
-	// 			printf("Uoc chung lon nhat la: %d",x%y);
-	// 		}
-	// 	}while(1);
-	// }
+	void UocSoChungVaBoiSoChung(){
+		do{
+			printf("Chuong trinh tim Uoc so chung lon nhat va Boi so chung nho nhat cua 2 so nguyen\n");
+			int x,y;
+			printf("\nNhap so nguyen x:");
+			scanf("%d",&x);
+			printf("Nhap so nguyen y:");
+			scanf("%d",&y);
+			if(y==0){
+				printf("Uoc chung lon nhat la: %d",x);
+			}
+			else if (x == 0 && y == 0) {
+            printf("Khong the tim UCLN/BCNN cho ca hai so 0.\n");
+			}
+			else if (x%y==0)
+			{
+				printf("Uoc chung lon nhat la: %d",y);
+			}
+			else{
+				printf("Uoc chung lon nhat la: %d",x%y);
+			}
+		}while(1);
+	}
 int main(){
 	int a;
 	do{
@@ -114,8 +113,7 @@ int main(){
 			KtrSoNguyen();
 			continue;
 		case 2:
-			printf("Chuong trinh tim Uoc so chung lon nhat va Boi so chung nho nhat cua 2 so nguyen\n");
-			// UocSoChungVaBoiSoChung();
+			UocSoChungVaBoiSoChung();
 			continue;
 		case 3:
 			printf("Chuong trinh tinh tien cho quan Karaoke");
