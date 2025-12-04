@@ -27,6 +27,7 @@ int menu(int a){
 }
 void KtrSoNguyen(){
 	do{
+		printf("Chuong trinh kiem tra so nguyen, so nguyen to va so chinh phuong\n");
 		int a;
 			int t;
 			printf("Kiem tra so nguyen");
@@ -67,7 +68,6 @@ void KtrSoNguyen(){
 			}
 			printf("\n\n\nBan co muon thoat chuong trinh khong?(y/n):");
 			scanf("%s",&luaChon);
-			retu:
 			if(strlwr(strstr(luaChon,"y"))){
 				printf("\n");
 				break;
@@ -84,6 +84,7 @@ void KtrSoNguyen(){
 	}
 	void UocSoChungVaBoiSoChung(){
 		do{
+			printf("Chuong trinh tim Uoc so chung lon nhat va Boi so chung nho nhat cua 2 so nguyen\n");
 			int x,y;
 			printf("\nNhap so nguyen x:");
 			scanf("%d",&x);
