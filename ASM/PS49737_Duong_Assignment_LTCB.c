@@ -122,7 +122,27 @@ void UocSoChungVaBoiSoChung(){
 	}while(1);
 }
 void tinhtienKaraoke(){
-	
+	int hrstart,hrend;
+	float sum;
+	printf("Chuong trinh tinh tien Karaoke!!\n");
+	printf("Nhap vao gio bat dau:");
+	scanf("%d",&hrstart);
+	printf("Nhap vao gio ket thuc:");
+	scanf("%d",&hrend);
+	if(hrstart>=12 && hrend<=23 && hrend>hrstart){
+		for(int i = 1;i <=(hrend-hrstart);i++){
+			if(i < 4)
+				sum += 150000;
+			if(i >= 4)
+				sum += (150000*0.70);
+		}
+		if(hrstart >= 14 && hrstart <= 17)
+			sum *= 0.9;
+	}
+	else{
+		printf("Loi");
+	}
+	printf("Tong tien thanh toan: %.2f",sum);
 }
 int main(){
 	int a;
