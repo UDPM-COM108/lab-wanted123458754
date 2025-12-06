@@ -29,17 +29,17 @@ void KtrSoNguyen(){
 	do{
 		printf("Chuong trinh kiem tra so nguyen, so nguyen to va so chinh phuong\n");
 		int a;
-			int t;
-			printf("Kiem tra so nguyen");
-			printf("\nVui long nhap 1 so nguyen x can kiem tra:");
-			scanf("%d",&a);
-			if(a == (int)a){
+		int t;
+		printf("Kiem tra so nguyen");
+		printf("\nVui long nhap 1 so nguyen x can kiem tra:");
+		scanf("%d",&a);
+		if(a == (int)a){
 			printf("Day la mot so nguyen.");
-			}
-			else{
+		}
+		else{
 			printf("Day khong phai la so nguyen.");
-			}
-			if(a > 1){
+		}
+		if(a > 1){
 			int check = 0;
 			for(int i = 2; i < a; i++){
 				if(a%i==0){
@@ -55,16 +55,17 @@ void KtrSoNguyen(){
 			}
 			}
 			else{
-			printf("\nDay khong phai so nguyen to.");
+				printf("\nDay khong phai so nguyen to.");
 			}
 			if(a >= 0){
 			int CP;
 			CP = sqrt(a);
 			CP*=CP;
-			if(sqrt(a) >= 0) printf("\nDay la so chinh phuong");
+			if(sqrt(a) >= 0) 
+				printf("\nDay la so chinh phuong");
 			}
 			else{
-			printf("\nDay khong phai so chinh phuong");
+				printf("\nDay khong phai so chinh phuong");
 			}
 			printf("\n\n\nBan co muon thoat chuong trinh khong?(y/n):");
 			scanf("%s",&luaChon);
@@ -79,32 +80,50 @@ void KtrSoNguyen(){
 			else{
 				printf("Lua chon khong hop le. Vui long chon lai.\n\n");
 			}
-
 		}while(1);
-	}
-	void UocSoChungVaBoiSoChung(){
-		do{
-			printf("Chuong trinh tim Uoc so chung lon nhat va Boi so chung nho nhat cua 2 so nguyen\n");
-			int x,y;
-			printf("\nNhap so nguyen x:");
-			scanf("%d",&x);
-			printf("Nhap so nguyen y:");
-			scanf("%d",&y);
-			if(y==0){
-				printf("Uoc chung lon nhat la: %d",x);
+}
+void UocSoChungVaBoiSoChung(){
+	do{
+		printf("Chuong trinh tim Uoc so chung lon nhat va Boi so chung nho nhat cua 2 so nguyen\n");
+		int x,y,a,b,UCLN;
+		printf("\nNhap so nguyen x:");
+		scanf("%d",&x);
+		printf("Nhap so nguyen y:");
+		scanf("%d",&y);
+		a = x;
+		b = y;		
+		while (1){
+			if(x==y){
+				printf("Uoc chung lon nhat cua (%d,%d) = %d \n",a,b,x);
+				UCLN = x;
+				break;
 			}
-			else if (x == 0 && y == 0) {
-            printf("Khong the tim UCLN/BCNN cho ca hai so 0.\n");
-			}
-			else if (x%y==0)
-			{
-				printf("Uoc chung lon nhat la: %d",y);
+			else if(x>y){
+				x = x-y;
 			}
 			else{
-				printf("Uoc chung lon nhat la: %d",x%y);
+				y = y-x;
 			}
-		}while(1);
-	}
+		}
+		printf("Boi chung nho nhat cua (%d,%d) = %d\n",a,b,(a*b)/UCLN);
+		printf("\n\n\nBan co muon thoat chuong trinh khong?(y/n):");
+		scanf("%s",&luaChon);
+		if(strlwr(strstr(luaChon,"y"))){
+			printf("\n");
+			break;
+		}
+		else if(strlwr(strstr(luaChon,"n"))){
+			printf("\n");
+			continue;
+		}
+		else{
+			printf("Lua chon khong hop le. Vui long chon lai.\n\n");
+		}
+	}while(1);
+}
+void tinhtienKaraoke(){
+	
+}
 int main(){
 	int a;
 	do{
@@ -143,7 +162,7 @@ int main(){
 			printf("Chuong trinh tinh toan phan so");
 			break;
 		case 0:
-		exit(0);
+			exit(0);
 		default:
 			printf("Chuong trinh khong ton tai!!!!");
 			break;
