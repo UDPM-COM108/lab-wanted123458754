@@ -122,27 +122,99 @@ void UocSoChungVaBoiSoChung(){
 	}while(1);
 }
 void tinhtienKaraoke(){
-	int hrstart,hrend;
-	float sum;
-	printf("Chuong trinh tinh tien Karaoke!!\n");
-	printf("Nhap vao gio bat dau:");
-	scanf("%d",&hrstart);
-	printf("Nhap vao gio ket thuc:");
-	scanf("%d",&hrend);
-	if(hrstart>=12 && hrend<=23 && hrend>hrstart){
-		for(int i = 1;i <=(hrend-hrstart);i++){
-			if(i < 4)
-				sum += 150000;
-			if(i >= 4)
-				sum += (150000*0.70);
+	do{
+		int hrstart,hrend;
+		float sum;
+		printf("Chuong trinh tinh tien Karaoke!!\n");
+		printf("Nhap vao gio bat dau:");
+		scanf("%d",&hrstart);
+		printf("Nhap vao gio ket thuc:");
+		scanf("%d",&hrend);
+		if(hrstart>=12 && hrend<=23 && hrend>hrstart){
+			for(int i = 1;i <=(hrend-hrstart);i++){
+				if(i < 4)
+					sum += 150000;
+				if(i >= 4)
+					sum += (150000*0.70);
+				}
+			if(hrstart >= 14 && hrstart <= 17)
+				sum *= 0.9;
+			printf("Tong tien thanh toan: %.2f",sum);
+			}
+		else{
+			printf("Loi");
 		}
-		if(hrstart >= 14 && hrstart <= 17)
-			sum *= 0.9;
-	}
-	else{
-		printf("Loi");
-	}
-	printf("Tong tien thanh toan: %.2f",sum);
+		printf("\n\n\nBan co muon thoat chuong trinh khong?(y/n):");
+		scanf("%s",&luaChon);
+		if(strlwr(strstr(luaChon,"y"))){
+			printf("\n");
+			break;
+		}
+		else if(strlwr(strstr(luaChon,"n"))){
+			printf("\n");
+			continue;
+		}
+		else{
+			printf("Lua chon khong hop le. Vui long chon lai.\n\n");
+		}
+	}while(1);
+}
+void Tinhtiendien(){
+	do{
+		printf("Chuong trinh tinh tien dien!!");
+		int tdien,tongtien = 0;
+		int bac1 = 1678,
+			bac2 = 1734,
+			bac3 = 2014,
+			bac4 = 2536,
+			bac5 = 2834,
+			bac6 = 2927
+		;
+		printf("\nNhap vao so tien dien(kwh):");
+		scanf("%d",&tdien);
+		if(tdien>=0){
+			if(tdien >= 401){
+				tongtien += (tdien - 400)*bac6;
+				tdien -= tdien - 400;
+			}
+			if(tdien >= 301){
+				tongtien += (tdien - 300)*bac5;
+				tdien -= tdien - 300;
+			}
+			if(tdien >= 201){
+				tongtien += (tdien - 200)*bac4;
+				tdien -= tdien - 200;
+			}
+			if(tdien >= 101){
+				tongtien += (tdien - 100)*bac3;
+				tdien -= tdien - 100;
+			}
+			if(tdien >= 51){
+				tongtien += (tdien - 50)*bac2;
+				tdien -= tdien - 50;
+			}
+			if(tdien <= 50){
+				tongtien += tdien*bac1;
+			}
+		}
+		else{
+			printf("Loi");
+		}
+		printf("So tien can tra = %d",tongtien);
+		printf("\n\n\nBan co muon thoat chuong trinh khong?(y/n):");//Yeu cau thoat chuong trinh
+		scanf("%s",&luaChon);
+		if(strlwr(strstr(luaChon,"y"))){
+			printf("\n");
+			break;
+		}
+		else if(strlwr(strstr(luaChon,"n"))){
+			printf("\n");
+			continue;
+		}
+		else{
+			printf("Lua chon khong hop le. Vui long chon lai.\n\n");
+		}
+	}while(1);
 }
 int main(){
 	int a;
@@ -155,10 +227,10 @@ int main(){
 			UocSoChungVaBoiSoChung();
 			continue;
 		case 3:
-			printf("Chuong trinh tinh tien cho quan Karaoke");
+			tinhtienKaraoke();
 			break;
 		case 4:
-			printf("Chuong trinh tinh tien dien");
+			Tinhtiendien();
 			break;
 		case 5:
 			printf("Chuc nang doi tien");
